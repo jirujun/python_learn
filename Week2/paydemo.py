@@ -12,25 +12,17 @@ class vip(pay):
         self.quantity = quantity
         self.amount = amount
         self.discount = 1
-    
-    def rebate(self):
         if self.quantity >= 10 :
             self.discount = 0.85
         if self.amount >= 200 :
             self.discount = 0.8
 
-        self.total()
-
 class novip(pay):
     def __init__(self,amount):
         self.amount = amount
         self.discount = 1
-    
-    def rebate(self):
         if self.amount >=200 :
             self.discount = 0.9
-
-        self.total()
 
 
 class Factory:
@@ -47,7 +39,7 @@ if __name__ == '__main__':
     quantity = int(input('请输入所购数量：'))
     amount = float(input('请输入所购总金额：'))
     paymoney = factory.getpay(quantity,amount,isvip)
-    paymoney.rebate()
+    paymoney.total()
 
 
 
